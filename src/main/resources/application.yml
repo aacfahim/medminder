@@ -1,0 +1,26 @@
+#server:
+#  port: 8001
+
+spring:
+  application:
+    name: MedicineReminder
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/medicine_app
+    username: postgres
+    password: aacfahim
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+
+  security:
+    user:
+      name: admin
+      password: admin
