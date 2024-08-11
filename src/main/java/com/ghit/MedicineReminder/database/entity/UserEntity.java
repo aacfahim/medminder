@@ -1,9 +1,9 @@
 package com.ghit.MedicineReminder.database.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import ch.qos.logback.core.subst.Token;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,12 +14,18 @@ import lombok.*;
 @Table(name = "users")
 public class UserEntity extends BaseEntity{
 
+    private String name;
+
     private String email;
 
     private String password;
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany(mappedBy = "users")
+    private List<Token> tokens;
+
 
 
 }
