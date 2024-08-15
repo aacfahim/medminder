@@ -23,8 +23,6 @@ public class UserEntity extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @OneToMany(mappedBy = "users")
-    private List<Token> tokens;
 
 
 
