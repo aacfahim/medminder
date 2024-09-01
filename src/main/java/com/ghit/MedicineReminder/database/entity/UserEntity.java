@@ -3,6 +3,7 @@ import ch.qos.logback.core.subst.Token;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -20,8 +21,11 @@ public class UserEntity extends BaseEntity{
 
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "oid"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "oid"))
+    private List<Role> roles = new ArrayList<>();
+
 
 
 

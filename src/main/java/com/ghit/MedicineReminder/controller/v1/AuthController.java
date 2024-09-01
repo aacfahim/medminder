@@ -2,7 +2,6 @@ package com.ghit.MedicineReminder.controller.v1;
 
 import com.ghit.MedicineReminder.dto.LoginRequest;
 import com.ghit.MedicineReminder.dto.RegisterRequest;
-import com.ghit.MedicineReminder.security.auth.AuthenticationResponse;
 import com.ghit.MedicineReminder.service.AuthService;
 import com.ghit.MedicineReminder.utils.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +17,16 @@ public class AuthController {
     @Autowired
     AuthService authService;
 
-    @PostMapping(Api.REGISTER)
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request){
-
-        return new ResponseEntity<>(authService.register(request), HttpStatus.CREATED);
-
-    }
-
-    @PostMapping(Api.LOGIN)
-    public ResponseEntity<AuthenticationResponse> login(@RequestBody LoginRequest request){
-        return new ResponseEntity<>(authService.login(request), HttpStatus.OK);
-
-    }
+//    @PostMapping(Api.REGISTER)
+//    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request){
+//
+//        return new ResponseEntity<>(authService.register(request), HttpStatus.CREATED);
+//
+//    }
+//
+//    @PostMapping(Api.LOGIN)
+//    public ResponseEntity<AuthenticationResponse> login(@RequestBody LoginRequest request){
+//        return new ResponseEntity<>(authService.login(request), HttpStatus.OK);
+//
+//    }
 }
